@@ -1,3 +1,5 @@
+cred web interface
+=====
 cred-web is a javascript interface that displays data and other things using the
 API exposed by a [cred-server web application](https://github.com/Tehnix/cred-server "cred-server repository").
 
