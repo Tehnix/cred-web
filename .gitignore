@@ -1,0 +1,4 @@
+env/*
+public/.module-cache/*
+.DS_Store
+config.yaml

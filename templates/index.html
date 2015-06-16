@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cred web interface</title>
+    <script src="/react-0.13.3.min.js"></script>
+    <script src="/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // Global variables
+    var hostname = '{{ hostname|safe }}',
+        apikey = '{{ apikey|safe }}',
+        authData = {
+            'apikey': apikey,
+            'device': 'Web UI',
+            'location': 'Internet',
+            'subscribe': {}
+        };
+    </script>
+    <!-- The container for the React.js components. -->
+    <div id="content"></div>
+    <!-- The React.js components themselves. -->
+    <script src="/app.js"></script>
+  </body>
+</html>
