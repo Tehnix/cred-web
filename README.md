@@ -7,6 +7,18 @@ To use the application, first configure it to use your API key and set the host
 for the cred-server, which the javascript interface will talk to.
 
 
+Usage
+=====
+Simply clone the repository, install flask, set up the configuration file and
+finally start the server.
+
+1. `$ git clone git@github.com:Tehnix/cred-web.git && cd cred-web`
+2. `$ virtualenv env && source env/bin/activate`
+3. `$ pip install -r requirements.txt`
+4. Create the configuration file, as mentioned in the configuration section.
+5. `$ python server.py`
+
+
 Configuration
 =====
 First you need to configure the application to point to your server, and to use
@@ -29,7 +41,6 @@ apikey: 'P4SB6o5jWR5aO49haY6vs3ky1zFeagIHkSR2prXGNNw'
 or some other implementation.
 * `apikey` is an API key that gives READ access to the API server.
 
-Finally
 
 Development
 =====
@@ -43,7 +54,7 @@ The following should get you going,
 3. `$ pip install -r requirements.txt`
 
 
-[React.js tooling](https://facebook.github.io/react/docs/tooling-integration.html) is used for compiling the ´.jsx´ code. You can get going with,
+[React.js tooling](https://facebook.github.io/react/docs/tooling-integration.html) is used for compiling the `.jsx` code. You can get going with,
 
 ```bash
 npm install -g react-tools
