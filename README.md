@@ -40,7 +40,7 @@ The following should get you going,
 
 1. `$ git clone git@github.com:Tehnix/cred-web.git && cd cred-web`
 2. `$ virtualenv env && source env/bin/activate`
-3. `pip install -r requirements.txt`
+3. `$ pip install -r requirements.txt`
 
 
 [React.js tooling](https://facebook.github.io/react/docs/tooling-integration.html) is used for compiling the ´.jsx´ code. You can get going with,
