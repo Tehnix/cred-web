@@ -126,14 +126,41 @@ var EventContainer = React.createClass({displayName: "EventContainer",
 });
 
 var Event = React.createClass({displayName: "Event",
+    getInitialState: function() {
+        return { displayData: false };
+    },
+    onClick: function(event) {
+        if (this.state.displayData) {
+            this.setState({ displayData: false });
+        } else {
+            this.setState({ displayData: true });
+        }
+    },
     render: function() {
         return (
-            React.createElement("div", {className: "event"}, 
-                React.createElement("span", {className: "device"}, this.props.data.device), 
-                React.createElement("span", {className: "eventName"}, this.props.data.name), 
-                React.createElement("span", {className: "location"}, this.props.data.location), 
-                React.createElement("span", {className: "action"}, this.props.data.action), 
-                React.createElement("span", {className: "value"}, this.props.data.value)
+            React.createElement("div", {className: "event", onClick: this.onClick}, 
+                React.createElement("span", {className: "device"}, 
+                    "Device:", 
+                    React.createElement("span", {className: "val"}, this.props.data.device)
+                ), 
+                React.createElement("span", {className: "name"}, 
+                    "Name:", 
+                    React.createElement("span", {className: "val"}, this.props.data.name)
+                ), 
+                React.createElement("span", {className: "location"}, 
+                    "Location:", 
+                    React.createElement("span", {className: "val"}, (this.props.data.location) ? this.props.data.location : "No location")
+                ), 
+                React.createElement("div", {className: this.state.displayData ? 'eventData' : 'eventData hidden'}, 
+                    React.createElement("span", {className: "action"}, 
+                        "Action:", 
+                        React.createElement("span", {className: "val"}, this.props.data.action)
+                    ), 
+                    React.createElement("span", {className: "value"}, 
+                        "Value:", 
+                        React.createElement("span", {className: "val"}, this.props.data.value)
+                    )
+                )
             )
         );
     }
@@ -169,8 +196,8 @@ var Client = React.createClass({displayName: "Client",
     render: function() {
         return (
             React.createElement("div", {className: "client"}, 
-                React.createElement("span", null, this.props.data.device), 
-                React.createElement("span", null, this.props.data.location)
+                React.createElement("span", {className: "device"}, this.props.data.device), 
+                React.createElement("span", {className: "location"}, this.props.data.location)
             )
         );
     }

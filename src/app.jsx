@@ -126,14 +126,41 @@ var EventContainer = React.createClass({
 });
 
 var Event = React.createClass({
+    getInitialState: function() {
+        return { displayData: false };
+    },
+    onClick: function(event) {
+        if (this.state.displayData) {
+            this.setState({ displayData: false });
+        } else {
+            this.setState({ displayData: true });
+        }
+    },
     render: function() {
         return (
-            <div className="event">
-                <span className="device">{this.props.data.device}</span>
-                <span className="eventName">{this.props.data.name}</span>
-                <span className="location">{this.props.data.location}</span>
-                <span className="action">{this.props.data.action}</span>
-                <span className="value">{this.props.data.value}</span>
+            <div className="event" onClick={this.onClick}>
+                <span className="device">
+                    Device:
+                    <span className="val">{this.props.data.device}</span>
+                </span>
+                <span className="name">
+                    Name:
+                    <span className="val">{this.props.data.name}</span>
+                </span>
+                <span className="location">
+                    Location:
+                    <span className="val">{(this.props.data.location) ? this.props.data.location : "No location"}</span>
+                </span>
+                <div className={this.state.displayData ? 'eventData' : 'eventData hidden'}>
+                    <span className="action">
+                        Action:
+                        <span className="val">{this.props.data.action}</span>
+                    </span>
+                    <span className="value">
+                        Value:
+                        <span className="val">{this.props.data.value}</span>
+                    </span>
+                </div>
             </div>
         );
     }
@@ -169,8 +196,8 @@ var Client = React.createClass({
     render: function() {
         return (
             <div className="client">
-                <span>{this.props.data.device}</span>
-                <span>{this.props.data.location}</span>
+                <span className="device">{this.props.data.device}</span>
+                <span className="location">{this.props.data.location}</span>
             </div>
         );
     }
