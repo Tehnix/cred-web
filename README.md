@@ -67,3 +67,10 @@ jsx --extension jsx src/ public/
 ```
 
 or with `--watch` to keep building after automatically on file changes.
+
+
+Screenshot
+=====
+While it isn't the prettiest of things, it gets the job done in displaying the data.
+
+![screenshot 2015-06-17 03 05 49](https://cloud.githubusercontent.com/assets/1189998/8197813/d8a474f2-149d-11e5-96ba-abcbdb6f0b04.png)
